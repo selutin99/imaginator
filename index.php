@@ -1,6 +1,10 @@
 <?php
 	session_start();
-	
+		
+	if(isset($_COOKIE['user'])){
+		exit(header("location:indexlogin.php"));
+	}
+
 	include 'header.php';
 	
 	$db = mysqli_connect("localhost", "root", "", "imaginator");
