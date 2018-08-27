@@ -12,7 +12,7 @@
 
 	if (isset($_POST['upload'])) {
 		
-		$image = $_FILES['image']['name'];
+		$image = uniqid().$_FILES['image']['name'];
 		$image_text = mysqli_real_escape_string($db, $_POST['image_text']);
 		$target = "images/".basename($image);
 
